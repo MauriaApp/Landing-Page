@@ -9,8 +9,7 @@ on:
 jobs:
 
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v3
@@ -31,8 +30,7 @@ jobs:
       run: docker run -d -p 4321:3000 .
 
   notify-success:
-
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     needs: build  # dépend du job 'build'
 

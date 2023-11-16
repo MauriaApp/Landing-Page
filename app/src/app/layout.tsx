@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../theme/globals.css";
 import { satoshi } from "@/theme/fonts/fonts";
 
 import { Viewport } from "next";
