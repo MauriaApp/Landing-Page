@@ -3,6 +3,7 @@ import "./globals.css";
 import { satoshi } from "@/theme/fonts/fonts";
 
 import { Viewport } from "next";
+import React from "react";
 
 export const viewport: Viewport = {
   themeColor: "#3F2A56",

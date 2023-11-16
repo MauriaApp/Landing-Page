@@ -3,7 +3,7 @@ Landing page de Mauria
 
 ## Technologies utilisées
 
-### NextJS
+### Next.JS
 
 ### TailwindCSS
 
@@ -14,7 +14,7 @@ Landing page de Mauria
 
 ### Librairie d'Icones
 
-Nous utilisons le pack d'icônes [Iconly Pro](https://iconly.pro/). Celles-ci sont payantes. Vous pouvez contacter [Louis Lecouturier](https://discordapp.com/users/louistiti_) pour avoir les icones de ce pack
+Nous utilisons le pack d'icônes [Iconly Pro](https://iconly.pro/). Celles-ci sont payantes. Vous pouvez contacter [Louis Lecouturier](https://discordapp.com/users/louistiti_) pour avoir les icones de ce pack.
 Il est préférable d'utiliser les icones de ce pack pour garder une cohérence de design sur le site et l'application Mauria
 
 ### Utilisation dans le code
