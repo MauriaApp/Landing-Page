@@ -27,7 +27,7 @@ jobs:
         fi
       
     - name: Run the Docker image
-      run: docker run -d -p 4321:3000 .
+      run: docker run -d -p 4321:3000 mauria-landing-page:latest
 
   notify-success:
     runs-on: self-hosted
