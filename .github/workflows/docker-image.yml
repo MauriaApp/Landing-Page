@@ -20,7 +20,7 @@ jobs:
       - name: Stop and remove previous container
         run: |
           # Récupérer le nom du conteneur en cours d'exécution basé sur l'image spécifiée
-          CONTAINER_NAME=$(docker ps --format '{{.Names}}' --filter "ancestor=mauria-landing-page:latest")
+          CONTAINER_NAME=$(docker ps --format '{{.Names}}' --filter "name=mauria-landing-page")
           
           # Stopper et supprimer le conteneur s'il est en cours d'exécution
           if [ -n "$CONTAINER_NAME" ]; then
@@ -32,7 +32,7 @@ jobs:
           fi
 
       - name: Run the Docker image
-        run: docker run -d -p 4321:3000 mauria-landing-page:latest
+        run: docker run -d -n mauria-landing-page -p 4321:3000 mauria-landing-page:latest
 
   notify-success:
     runs-on: self-hosted
