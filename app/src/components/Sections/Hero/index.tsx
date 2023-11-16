@@ -32,7 +32,7 @@ const Hero = () => {
       <div />
       <div className={heroContentClassNames}>
         <span className={"block tracking-widest translate-y-1/2"}>Meet</span>
-        <h1 className={titleClassNames}>Mauria 🤌🏻</h1>
+        <h1 className={titleClassNames}>Mauria</h1>
         <span>
           Le compagnon des étudiants <strong>JUNIA</strong>
         </span>
