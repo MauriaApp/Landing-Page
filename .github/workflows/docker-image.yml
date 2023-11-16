@@ -19,13 +19,17 @@ jobs:
     - name: Stop previous image's container
       run: |
         # Récupérer l'ID du conteneur en cours d'exécution
-        CONTAINER_ID=$(docker ps -q --filter ancestor=mauria-landing-page:latest)
+        CONTAINER_ID=$(docker ps -q --filter "ancestor=mauria-landing-page:latest")
         
         # Stopper le conteneur s'il est en cours d'exécution
         if [ -n "$CONTAINER_ID" ]; then
+          echo "Arrêt du conteneur en cours d'exécution avec l'ID : $CONTAINER_ID"
           docker stop $CONTAINER_ID
+        else
+          echo "Aucun conteneur en cours d'exécution avec l'ancêtre spécifié."
         fi
-      
+    
+
     - name: Run the Docker image
       run: docker run -d -p 4321:3000 mauria-landing-page:latest
 
