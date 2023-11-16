@@ -1,0 +1,41 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mauria-landing-page:latest
+
+    - name: Stop previous image's container
+      run: |
+        # Récupérer l'ID du conteneur en cours d'exécution
+        CONTAINER_ID=$(docker ps -q --filter ancestor=mauria-landing-page:latest)
+        
+        # Stopper le conteneur s'il est en cours d'exécution
+        if [ -n "$CONTAINER_ID" ]; then
+          docker stop $CONTAINER_ID
+        fi
+      
+    - name: Run the Docker image
+      run: docker run -d -p 4321:3000 .
+
+  notify-success:
+
+    runs-on: ubuntu-latest
+
+    needs: build  # dépend du job 'build'
+
+    steps:
+    - name: Notify success
+      run: echo "L'app a été mise à jour avec succès !"
